@@ -1,17 +1,27 @@
 pipeline {
     agent any 
-    
+    parameters {
+         choice(name:'OS',choices['windows','mac'],description:'Select your Operating System')
+    }
     stages {
         stage ('install dependencies'){
             steps{
                 sh 'npm install'
             }
         }
-         stage ('set environment'){
+        stage ('set environment'){
+            when {
+                expression {params.OS == "mac"}
+            }
             steps{
-                sh 'set NODE_ENV=qaCred'
-                
-                sh 'node setEnvironment'
+                echo `environment=${params.OS}`
+            }
+
+             when {
+                expression {params.OS == "windows"}
+            }
+            steps{
+                echo `my environment=${params.OS}`
             }
         }
         stage('Parallel Execution'){

@@ -1,3 +1,11 @@
+def checkOs(){
+    if (isUnix()) {
+        console.log("MAC") 
+    }
+    else {
+        echo "Windows"
+    }
+}
 pipeline 
 {
     agent any 
@@ -10,13 +18,7 @@ pipeline
         stage ('set environment'){
             steps{
     
-                try{
-                    echo "windows"
-                }
-                catch(err)
-                {
-                   echo "MAC"
-                }
+               checkOs()
             }
         }
         stage('Parallel Execution'){

@@ -10,7 +10,7 @@ pipeline {
          stage ('set environment'){
             steps{
                 sh 'export NODE_ENV=qaCred'
-                echo $env:NODE_ENV
+                sh 'node setEnvironment'
             }
         }
         stage('Parallel Execution'){

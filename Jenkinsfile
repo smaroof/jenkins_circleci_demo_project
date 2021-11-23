@@ -16,13 +16,6 @@ pipeline {
             steps{
                 echo 'hello MAC world'
             }
-
-             when {
-                expression {params.OS == "windows"}
-            }
-            steps{
-                echo 'hello Windows world'
-            }
         }
         stage('Parallel Execution'){
             parallel{

@@ -1,11 +1,10 @@
 {
   "name": "jenkins_circleci_demo_project",
   "version": "1.0.0",
-  "description": "",
   "main": "main.js",
   "scripts": {
     "test": "node main",
-    "run_test": "node node_modules/@cucumber/cucumber/bin/cucumber-js ./isitFriday.feature"
+    "run_test": "node node_modules/@cucumber/cucumber/bin/cucumber-js features/hearShout.feature"
   },
   "repository": {
     "type": "git",
@@ -18,6 +17,10 @@
   },
   "homepage": "https://github.com/smaroof/jenkins_circleci_demo_project#readme",
   "dependencies": {
-    "@cucumber/cucumber": "^8.0.0-rc.1"
-  }
+    "@cucumber/cucumber": "^8.0.0-rc.1",
+    "hamjest": "^3.7.3"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
 }

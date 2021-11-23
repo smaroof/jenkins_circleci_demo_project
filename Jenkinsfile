@@ -1,4 +1,5 @@
-pipeline {
+pipeline 
+{
     agent any 
     stages {
         stage ('install dependencies'){
@@ -8,15 +9,12 @@ pipeline {
         }
         stage ('set environment'){
             steps{
-                //    if (isUnix()) {
-                //         echo "MAC"
-                //    }else{
-                //         echo "Windows"
-                //    }
+    
                 try{
                     echo "windows"
                 }
-                catch {
+                catch(err)
+                {
                    echo "MAC"
                 }
             }

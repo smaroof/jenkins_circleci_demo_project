@@ -14,14 +14,14 @@ pipeline {
                 expression {params.OS == "mac"}
             }
             steps{
-                echo `environment=${params.OS}`
+                echo 'hello MAC world'
             }
 
              when {
                 expression {params.OS == "windows"}
             }
             steps{
-                echo `my environment=${params.OS}`
+                echo 'hello Windows world'
             }
         }
         stage('Parallel Execution'){

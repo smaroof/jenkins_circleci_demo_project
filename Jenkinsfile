@@ -9,7 +9,8 @@ pipeline {
         }
          stage ('set environment'){
             steps{
-                sh 'export NODE_ENV=qaCred'
+                sh 'set NODE_ENV=qaCred'
+                
                 sh 'node setEnvironment'
             }
         }

@@ -2,9 +2,9 @@ pipeline {
     agent any 
     
     stages {
-        stage ('build'){
+        stage ('install dependencies'){
             steps{
-                echo 'Building the project....'
+                sh 'npm install'
             }
         }
          stage ('test'){
@@ -12,7 +12,7 @@ pipeline {
                 echo 'Testing the project....'
             }
         }
-        stage('Project File Execution'){
+        stage('Parallel Execution'){
             parallel{
                  stage('Run main.js'){
                       steps {

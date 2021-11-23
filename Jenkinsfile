@@ -7,9 +7,10 @@ pipeline {
                 sh 'npm install'
             }
         }
-         stage ('test'){
+         stage ('set environment'){
             steps{
-                echo 'Testing the project....'
+                sh 'export NODE_ENV=qaCred'
+                echo $env:NODE_ENV
             }
         }
         stage('Parallel Execution'){

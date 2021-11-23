@@ -16,7 +16,7 @@ pipeline {
             parallel{
                  stage('Run main.js'){
                       steps {
-                          sh 'node main'
+                          sh 'npm test'
                       }
                  }
                   

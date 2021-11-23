@@ -1,0 +1,19 @@
+{
+  "name": "jenkins_circleci_demo_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smaroof/jenkins_circleci_demo_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smaroof/jenkins_circleci_demo_project/issues"
+  },
+  "homepage": "https://github.com/smaroof/jenkins_circleci_demo_project#readme"
+}

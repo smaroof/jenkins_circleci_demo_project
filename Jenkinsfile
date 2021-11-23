@@ -12,7 +12,6 @@ pipeline {
            }else{
                echo "Windows"
            }
-    }
         }
         stage('Parallel Execution'){
             parallel{

@@ -25,7 +25,12 @@ pipeline {
                           sh 'node test'
                       }
                  }
-             
+                
+                stage('Run feature file'){
+                    steps{
+                        sh 'npm run run_test'
+                    }
+                }
             }
         }
     }

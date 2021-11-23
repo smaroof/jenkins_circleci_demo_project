@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "node main"
+    "test": "node main",
+    "run_test": "node node_modules/@cucumber/cucumber/bin/cucumber-js ./isitFriday.feature"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/smaroof/jenkins_circleci_demo_project/issues"
   },
-  "homepage": "https://github.com/smaroof/jenkins_circleci_demo_project#readme"
+  "homepage": "https://github.com/smaroof/jenkins_circleci_demo_project#readme",
+  "dependencies": {
+    "@cucumber/cucumber": "^8.0.0-rc.1"
+  }
 }

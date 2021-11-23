@@ -1,8 +1,5 @@
 pipeline {
     agent any 
-    parameters {
-         choice(name:'your_OS',choices['windows','mac'],description:'Select your Operating System: ')
-    }
     stages {
         stage ('install dependencies'){
             steps{
@@ -10,12 +7,12 @@ pipeline {
             }
         }
         stage ('set environment'){
-            when {
-                expression {params.your_OS == "windows"}
-            }
-            steps{
-                echo 'hello MAC world'
-            }
+           if (isUnix()) {
+               echo "MAC"
+           }else{
+               echo "Windows"
+           }
+    }
         }
         stage('Parallel Execution'){
             parallel{

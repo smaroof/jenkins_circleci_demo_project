@@ -12,9 +12,20 @@ pipeline {
                 echo 'Testing the project....'
             }
         }
-        stage('run'){
-            steps {
-                sh 'node test'
+        stage('Project File Execution'){
+            parallel{
+                 stage('Run main.js'){
+                      steps {
+                          sh 'node main'
+                      }
+                 }
+                  
+                stage('Run test.js'){
+                      steps {
+                          sh 'node test'
+                      }
+                 }
+             
             }
         }
     }

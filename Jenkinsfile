@@ -8,11 +8,17 @@ pipeline {
         }
         stage ('set environment'){
             steps{
-                   if (isUnix()) {
-                        echo "MAC"
-                   }else{
-                        echo "Windows"
-                   }
+                //    if (isUnix()) {
+                //         echo "MAC"
+                //    }else{
+                //         echo "Windows"
+                //    }
+                try{
+                    echo "windows"
+                }
+                catch {
+                   echo "MAC"
+                }
             }
         }
         stage('Parallel Execution'){

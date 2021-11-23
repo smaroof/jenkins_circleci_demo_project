@@ -3,7 +3,7 @@ def checkOs(){
         console.log("MAC") 
     }
     else {
-        echo "Windows"
+        sh "set NODE_ENV=qaCred"
     }
 }
 pipeline 
@@ -19,6 +19,7 @@ pipeline
             steps{
     
                checkOs()
+               echo $env:NODE_ENV
             }
         }
         stage('Parallel Execution'){

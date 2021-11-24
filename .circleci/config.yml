@@ -1,14 +1,6 @@
-def checkOs(){
-    if (isUnix()) {
-        sh "export NODE_ENV=qaCred"
-    }
-    else {
-        sh "set NODE_ENV=qaCred"
-    }
-}
-
-
 version: 2.1
+orbs: 
+  os-detect: circleci/os-detect@0.3.0
 jobs:
   installDependencies:
     docker:
@@ -19,17 +11,12 @@ jobs:
   setEnvironment:
     docker:
       - image: "node:14"
-      # auth:
-      #     username: user_username
-      #     password: user_password
-
     steps:
-      - run:
-          command: checkOs()
+      - run: 'echo "The current operating system  is ${OSD_ID}"'
+          
   parallelExecution:
     docker:
       - image: "node:14"
-  
     steps:
       - checkout
       - run:

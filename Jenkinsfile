@@ -53,7 +53,7 @@ pipeline
               alwaysLinkToLastBuild: false,
               keepAll: false,
               reportDir: "builds/${currentBuild.number}/htmlreports/",
-              reportFiles: 'index.html',
+              reportFiles: "index.html",
               reportName: 'Demo Report',
              ]
           )

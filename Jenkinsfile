@@ -52,10 +52,11 @@ pipeline
               allowMissing: false,
               alwaysLinkToLastBuild: false,
               keepAll: false,
-              reportDir: "htmlreports/",
+              reportDir: "htmlreports",
               includes:"**/*",
-              reportFiles: "index.html",
+              reportFiles: "myReports.html",
               reportName: 'Demo Report',
+              reportTitles: 'The Report'
              ]
           )
         }

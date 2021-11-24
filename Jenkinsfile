@@ -44,19 +44,23 @@ pipeline
             }
         }
     }
+
     post {
         always {
-          publishHTML([
+          publishHTML(
+              [
               allowMissing: false,
               alwaysLinkToLastBuild: true,
               keepAll: true,
-              reportDir: 'htmlreports/',
+              reportDir: 'jenkinReport/',
               includes: '**/*', 
               reportFiles: 'index.html',
               reportName: 'Demo Report',
               reportTitles: 'FH BP'
-          ])
+             ]
+          )
         }
     }
+    
 }
 

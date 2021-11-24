@@ -39,7 +39,7 @@ orbs:
 jobs:
   installDep:
     docker:
-      - image: cibuilds/base
+      - image: "node:14"
     steps:
       - run: npm install
   setEnv:

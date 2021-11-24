@@ -53,10 +53,8 @@ pipeline
               alwaysLinkToLastBuild: true,
               keepAll: true,
               reportDir: 'htmlreports/',
-              includes: '**/*', 
               reportFiles: 'index.html',
               reportName: 'Demo Report',
-              reportTitles: 'FH BP'
              ]
           )
         }

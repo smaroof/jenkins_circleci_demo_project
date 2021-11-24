@@ -47,18 +47,17 @@ pipeline
 
     post {
         always {
-          publishHTML(
+          publishHTML target:
               [
               allowMissing: false,
               alwaysLinkToLastBuild: false,
               keepAll: false,
-              reportDir: "",
-              includes:"**/*",
+              reportDir: "coverage",
               reportFiles: "myReports.html",
               reportName: 'Demo Report',
               reportTitles: 'The Report'
              ]
-          )
+          
         }
     }
     

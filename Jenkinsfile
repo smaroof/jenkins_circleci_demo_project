@@ -50,9 +50,11 @@ pipeline
               allowMissing: false,
               alwaysLinkToLastBuild: true,
               keepAll: true,
-              reportDir: 'jenkinReport',
+              reportDir: 'htmlreports/',
+              includes: '**/*', 
               reportFiles: 'index.html',
-              reportName: 'Demo Report'
+              reportName: 'Demo Report',
+              reportTitles: 'FH BP'
           ])
         }
     }

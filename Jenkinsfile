@@ -44,5 +44,10 @@ pipeline
             }
         }
     }
+    post{
+        always {
+            mail to: smaroof@salesforce.com , subject: `Pipeline Results`
+        }
+    }
 }
 

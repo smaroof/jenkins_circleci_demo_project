@@ -1,6 +1,6 @@
 def checkOs(){
     if (isUnix()) {
-        console.log("MAC") 
+        sh "export NODE_ENV=qaCred"
     }
     else {
         sh "set NODE_ENV=qaCred"
@@ -19,7 +19,7 @@ pipeline
             steps{
     
                checkOs()
-               echo $env:NODE_ENV
+               ///echo $env:NODE_ENV
             }
         }
         stage('Parallel Execution'){

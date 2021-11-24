@@ -1,6 +1,21 @@
+def checkOs(){
+    if (isUnix()) {
+        sh "export NODE_ENV=qaCred"
+    }
+    else {
+        sh "set NODE_ENV=qaCred"
+    }
+}
+
 version: 2.1
 jobs:
-  build:
+  installDependencies:
+    docker:
+      - image: "node:14"
+    steps:
+      - run:
+          command: npm install
+  setEnvironment:
     docker:
       - image: "node:14"
       # auth:
@@ -9,39 +24,26 @@ jobs:
 
     steps:
       - run:
-          command: echo "Building the project"
-  test:
+          command: checkOs()
+  parallelExecution:
     docker:
       - image: "node:14"
-      # auth:
-      #     username: user_username
-      #     password: user_password
-
-    steps:
-      - run:
-          command: echo "Testing the project"
-  run:
-    docker:
-      - image: "node:14"
-      # auth:
-      #     username: user_username
-      #     password: user_password
-
+  
     steps:
       - checkout
       - run:
-          command: node main
+          command: npm test
 workflows:
   version: 2
   build-and-test:
     jobs:
-      - build
-      - test:
+      - installDependencies
+      - setEnvironment:
           requires:
-            - build
-      - run:
+            - installDependencies
+      - parallelExecution:
           requires:
-            - test
+            - setEnvironment
 
             
 

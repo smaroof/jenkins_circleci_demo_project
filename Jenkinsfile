@@ -44,9 +44,16 @@ pipeline
             }
         }
     }
-    post{
+    post {
         always {
-            mail to: smaroof@salesforce.com , subject: `Pipeline Results`
+          publishHTML([
+              allowMissing: false,
+              alwaysLinkToLastBuild: true,
+              keepAll: true,
+              reportDir: 'jenkinReport',
+              reportFiles: 'index.html',
+              reportName: 'Demo Report'
+          ])
         }
     }
 }

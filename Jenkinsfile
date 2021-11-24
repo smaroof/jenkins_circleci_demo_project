@@ -50,9 +50,9 @@ pipeline
           publishHTML(
               [
               allowMissing: false,
-              alwaysLinkToLastBuild: true,
-              keepAll: true,
-              reportDir: '**/htmlreports/',
+              alwaysLinkToLastBuild: false,
+              keepAll: false,
+              reportDir: 'htmlreports/',
               reportFiles: 'index.html',
               reportName: 'Demo Report',
              ]

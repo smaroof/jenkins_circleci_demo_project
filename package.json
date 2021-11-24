@@ -5,7 +5,7 @@
   "scripts": {
     "test": "node main",
     "run_test": "node node_modules/@cucumber/cucumber/bin/cucumber-js features/hearShout.feature",
-    "build":"java -jar jenkins-cli.jar -s http://localhost:8080/ -webSocket -auth Admin:06b694eae483407b83e984ca104388fd build demo-project"
+    "build":"java -jar jenkins-cli.jar -s http://localhost:8080/ -webSocket -auth Admin:06b694eae483407b83e984ca104388fd build demo-pipeline"
   },
   "repository": {
     "type": "git",

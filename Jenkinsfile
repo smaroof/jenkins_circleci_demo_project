@@ -52,7 +52,7 @@ pipeline
               allowMissing: false,
               alwaysLinkToLastBuild: false,
               keepAll: false,
-              reportDir: "'${currentBuild.number}'/htmlreports/",
+              reportDir: "builds/${currentBuild.number}/htmlreports/",
               reportFiles: 'index.html',
               reportName: 'Demo Report',
              ]

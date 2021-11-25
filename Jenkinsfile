@@ -52,7 +52,7 @@ pipeline
               allowMissing: false,
               alwaysLinkToLastBuild: false,
               keepAll: false,
-              reportDir: "htmlreports",
+              reportDir: "C:/Users/smaroof/Downloads/demo project/jenkins_circleci_demo_project/htmlreports",
               reportFiles: "report",
               reportName: 'Demo Report'
              ]

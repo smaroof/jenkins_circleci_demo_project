@@ -6,6 +6,7 @@ def checkOs(){
         sh "set NODE_ENV=qaCred"
     }
 }
+
 pipeline 
 {
     agent any 
@@ -44,7 +45,6 @@ pipeline
             }
         }
     }
-
     post {
         always {
           publishHTML (target:
@@ -52,13 +52,12 @@ pipeline
               allowMissing: false,
               alwaysLinkToLastBuild: false,
               keepAll: false,
-              reportDir: "C:/Users/smaroof/Downloads/demo project/jenkins_circleci_demo_project/htmlreports",
+              reportDir: "htmlreports",
               reportFiles: "index.html",
               reportName: 'Demo Report'
              ]
           )
         }
-    }
-    
+    }   
 }
 

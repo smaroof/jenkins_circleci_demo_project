@@ -1,4 +1,4 @@
-const { Given, When, Then, Before, DataTable } = require('@cucumber/cucumber')
+const { Given, When, Then, Before, AfterStep } = require('@cucumber/cucumber')
 const { assertThat, contains, is, not } = require('hamjest')
 const assert = require('assert')
 

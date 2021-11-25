@@ -59,3 +59,8 @@ Then('Lucy hears the following messages:', function (expectedMessages) {
   let actualMessages = this.people['Lucy'].messagesHeard().map(message => [message])
   assert.deepEqual(actualMessages, expectedMessages.raw())
 })
+
+AfterStep(async function () {
+  ss = await page.screenshot({ fullPage: true })
+  await this.attach(ss, 'image/png')
+})

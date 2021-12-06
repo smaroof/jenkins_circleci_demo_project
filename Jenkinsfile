@@ -1,9 +1,9 @@
 def checkOs(){
     if (isUnix()) {
-        sh "export NODE_ENV=qaCred"
+        sh "not windows"
     }
     else {
-        sh "set NODE_ENV=qaCred"
+        sh "windows"
     }
 }
 

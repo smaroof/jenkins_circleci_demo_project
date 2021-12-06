@@ -1,7 +1,6 @@
 const { Given, When, Then, Before, AfterStep } = require('@cucumber/cucumber')
 const { assertThat, contains, is, not } = require('hamjest')
 const assert = require('assert')
-
 const { Person, Network } = require('../src/shouty')
 
 const default_range = 100
@@ -33,10 +32,13 @@ When('Sean shouts {string}', function (message) {
   this.people['Sean'].shout(message)
   this.messageFromSean = message
 })
-
+let page
 When('Sean shouts the following message', function (message) {
   this.people['Sean'].shout(message)
   this.messageFromSean = message
+  page = await loadBrowser()
+  await page.goto("https://www-qa1.salesforce.com/plus",{ waitUntil: 'load', timeout: 0 })
+  await waitTillHTMLRendered(page)
 })
 
 Then('Lucy should hear Sean\'s message', function () {

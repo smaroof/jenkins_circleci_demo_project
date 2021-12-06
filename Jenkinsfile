@@ -1,6 +1,6 @@
 def checkOs(){
     if (isUnix()) {
-        sh "no windows"
+        sh "not windows"
     }
     else {
         sh "windows"
